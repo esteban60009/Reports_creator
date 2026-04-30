@@ -1,0 +1,76 @@
+/* ===========================
+   PRINT STYLES
+   =========================== */
+@media print {
+  /* Hide non-print elements */
+  .sidebar,
+  .header,
+  .viewer__toolbar,
+  .toast-container,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset layout */
+  .app-shell__wrapper {
+    margin-left: 0 !important;
+  }
+
+  .app-shell__content {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* Print report styles */
+  .print-report {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-report__header {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-block__num,
+  .lp-block__num {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .report-row__status {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page breaks */
+  .print-block {
+    break-inside: avoid;
+  }
+
+  .print-report__signatures {
+    break-inside: avoid;
+  }
+
+  /* Force colors in print */
+  .print-report__header {
+    background: #FFF5F6 !important;
+    border-bottom: 2px solid #C8102E !important;
+  }
+
+  .print-block__title {
+    background: #F7F7F9 !important;
+  }
+
+  @page {
+    margin: 15mm;
+  }
+}
