@@ -6,6 +6,7 @@ import {
   Copy, Settings2, Type, Hash, ToggleLeft,
   Calendar, CheckSquare, List, AlignLeft,
   PenTool, Image, Ruler, Sparkles, HelpCircle,
+  Minus, StickyNote, Droplets,
 } from 'lucide-react';
 import {
   DndContext, closestCenter, KeyboardSensor,
@@ -30,6 +31,7 @@ const VARIABLE_TYPE_ICONS: Record<VariableType, typeof Type> = {
   text: Type, textarea: AlignLeft, number: Hash, measurement: Ruler,
   select: List, checkbox: CheckSquare, date: Calendar,
   pass_fail: ToggleLeft, signature: PenTool, image: Image,
+  divider: Minus, note: StickyNote, watermark: Droplets,
 };
 
 const BLOCK_COLORS = [

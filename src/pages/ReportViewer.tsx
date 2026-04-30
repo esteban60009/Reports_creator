@@ -5,12 +5,10 @@ import {
   Printer,
   Download,
   CheckCircle,
-  XCircle,
   Calendar,
   User,
   Cpu,
   FileText,
-  Edit3,
   Copy,
 } from 'lucide-react';
 import { useReportStore } from '../store/reportStore';

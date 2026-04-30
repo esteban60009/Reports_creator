@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Search,
-  Filter,
   Eye,
   Trash2,
   FileText,
-  Clock,
   X,
 } from 'lucide-react';
 import { useReportStore } from '../store/reportStore';

@@ -8,7 +8,7 @@ interface Props {
   serviceType: string;
 }
 
-const TYPE_SAMPLE: Record<string, () => JSX.Element> = {
+const TYPE_SAMPLE: Record<string, () => React.ReactNode> = {
   pass_fail: () => (
     <div className="lp-pf">
       <span className="lp-pf__pass">✅ APROBADO</span>

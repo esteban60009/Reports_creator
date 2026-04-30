@@ -8,7 +8,6 @@ import {
   MapPin,
   ChevronRight,
   Trash2,
-  Edit3,
   X,
 } from 'lucide-react';
 import { useEquipmentStore } from '../store/equipmentStore';
@@ -19,7 +18,7 @@ import './EquipmentCatalog.css';
 export default function EquipmentCatalog() {
   const navigate = useNavigate();
   const {
-    items, loading, fetch, filtered, create, remove,
+    loading, fetch, filtered, create, remove,
     searchQuery, setSearchQuery, categoryFilter, setCategoryFilter,
   } = useEquipmentStore();
   const { addToast } = useAppStore();

@@ -5,7 +5,7 @@ import {
   Type, Hash, ToggleLeft, Calendar, CheckSquare, List,
   AlignLeft, AlignCenter, AlignRight, PenTool, Ruler, MousePointer,
   Copy, ChevronUp, ChevronDown, Minus, StickyNote, Image, Settings2,
-  Droplets, Square, PanelTop,
+  Square,
 } from 'lucide-react';
 import { v4 as uuid } from 'uuid';
 import { useEquipmentStore } from '../store/equipmentStore';
@@ -156,16 +156,6 @@ export default function TemplateBuilder() {
     if (activeField?.fieldId === fId) setActiveField(null);
   };
 
-  const moveField = (sId: string, fId: string, dir: -1 | 1) => {
-    setSections(p => p.map(s => {
-      if (s.id !== sId) return s;
-      const vars = [...s.variables];
-      const idx = vars.findIndex(v => v.id === fId);
-      if (idx + dir < 0 || idx + dir >= vars.length) return s;
-      [vars[idx], vars[idx + dir]] = [vars[idx + dir], vars[idx]];
-      return { ...s, variables: vars };
-    }));
-  };
 
   // ── AI Import ──
   const handleAIImport = (blocks: TemplateBlock[]) => {
@@ -375,7 +365,7 @@ export default function TemplateBuilder() {
 
                       {/* Fields */}
                       <div className="tb__fields">
-                        {sec.variables.map((field, fi) => {
+                        {sec.variables.map((field) => {
                           const allTypes = [...FIELD_TYPES, ...LAYOUT_TYPES];
                           const FIcon = allTypes.find(f => f.type === field.type)?.icon || Type;
                           const isActive = activeField?.fieldId === field.id;

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import {
   Search,
   Plus,
-  Filter,
   FileText,
   Trash2,
   Edit3,

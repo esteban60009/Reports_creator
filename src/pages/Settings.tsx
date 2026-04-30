@@ -4,25 +4,15 @@ import {
   Upload,
   Save,
   User,
-  Palette,
   Plus,
   Trash2,
   Edit3,
   X,
-  Eye,
-  Type,
-  Layout,
-  Columns,
-  AlignLeft,
-  AlignCenter,
-  Grid3X3,
-  Minus,
-  FileText,
 } from 'lucide-react';
 import SignatureCanvas from 'react-signature-canvas';
 import { api } from '../services/api';
 import { useAppStore } from '../store/appStore';
-import type { CompanySettings, Technician, ReportLayout } from '../types';
+import type { CompanySettings, Technician } from '../types';
 import './Settings.css';
 
 export default function Settings() {
@@ -40,17 +30,11 @@ export default function Settings() {
   const [techForm, setTechForm] = useState({ name: '', role: '', email: '', phone: '' });
   const techSigRef = useRef<SignatureCanvas | null>(null);
 
-  // Layout
-  const [layouts, setLayouts] = useState<ReportLayout[]>([]);
-  const [activeLayout, setActiveLayout] = useState<ReportLayout | null>(null);
+
 
   useEffect(() => {
     api.settings.getCompany().then(setSettings);
     api.settings.getTechnicians().then(setTechnicians);
-    api.settings.getLayouts().then(data => {
-      setLayouts(data);
-      if (data.length > 0) setActiveLayout(data[0]);
-    });
   }, []);
 
   // --- Company ---
@@ -125,21 +109,6 @@ export default function Settings() {
     setShowTechForm(false);
     setEditingTech(null);
     setTechForm({ name: '', role: '', email: '', phone: '' });
-  };
-
-  // --- Layout ---
-  const handleSaveLayout = async () => {
-    if (!activeLayout) return;
-    setSaving(true);
-    try {
-      const updated = await api.settings.updateLayout(activeLayout.id, activeLayout);
-      setActiveLayout(updated);
-      addToast('Diseño de reporte guardado', 'success');
-    } catch {
-      addToast('Error al guardar diseño', 'error');
-    } finally {
-      setSaving(false);
-    }
   };
 
   const tabs = [

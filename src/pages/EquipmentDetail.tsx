@@ -14,7 +14,7 @@ import {
 import { useEquipmentStore } from '../store/equipmentStore';
 import { useTemplateStore } from '../store/templateStore';
 import { EQUIPMENT_CATEGORY_LABELS, SERVICE_TYPE_LABELS } from '../types';
-import type { Equipment, EquipmentCategory, Template, ServiceType } from '../types';
+import type { Equipment, EquipmentCategory, ServiceType } from '../types';
 import { useAppStore } from '../store/appStore';
 import './EquipmentDetail.css';
 

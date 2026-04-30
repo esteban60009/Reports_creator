@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-import type { Report, ReportVariableValue, ReportBlock } from '../types';
+import type { Report, ReportVariableValue } from '../types';
 import type { CompanySettings, ReportLayout } from '../types';
 
 interface PDFOptions {

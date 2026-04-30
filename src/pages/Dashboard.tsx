@@ -13,7 +13,7 @@ import {
 import { useEquipmentStore } from '../store/equipmentStore';
 import { useReportStore } from '../store/reportStore';
 import { useTemplateStore } from '../store/templateStore';
-import { SERVICE_TYPE_LABELS, REPORT_STATUS_LABELS } from '../types';
+import { REPORT_STATUS_LABELS } from '../types';
 import './Dashboard.css';
 
 export default function Dashboard() {

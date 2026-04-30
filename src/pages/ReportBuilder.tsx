@@ -9,8 +9,6 @@ import {
   ChevronDown,
   ChevronUp,
   Save,
-  Eye,
-  Printer,
   FileText,
 } from 'lucide-react';
 import SignatureCanvas from 'react-signature-canvas';
@@ -28,7 +26,6 @@ import type {
   Template,
   Technician,
   TemplateBlock,
-  TemplateVariable,
   ReportBlock,
   ReportVariableValue,
   ServiceType,

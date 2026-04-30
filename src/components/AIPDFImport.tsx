@@ -59,7 +59,7 @@ export default function AIPDFImport({ equipmentName, onImport, onClose }: Props)
     try {
       const data = await api.ai.analyzePDF(file, equipmentName);
       setResult(data);
-      const allIdx = new Set(data.blocks.map((_: any, i: number) => i));
+      const allIdx = new Set<number>(data.blocks.map((_: any, i: number) => i));
       setSelectedBlocks(allIdx);
     } catch (err: any) {
       setError(err.message || 'Error al analizar el PDF');
